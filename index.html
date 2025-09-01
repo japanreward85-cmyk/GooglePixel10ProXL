@@ -230,7 +230,7 @@
             margin-top: 20px;
             position: relative;
             overflow: hidden;
-            text-decoration: none; /* For <a> tag */
+            text-decoration: none;
             display: inline-block;
         }
         
@@ -444,20 +444,6 @@
             }
         }
         
-        @keyframes bounceIn {
-            0% { 
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            60% { 
-                opacity: 1;
-                transform: scale(1.05);
-            }
-            100% { 
-                transform: scale(1);
-            }
-        }
-        
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.3rem;
@@ -528,68 +514,23 @@
             <p class="subheading">Limited time offer! Complete a simple survey to claim your exclusive discount on the most advanced Pixel yet.</p>
             
             <div class="countdown-container">
-               <script>
-    // Set the countdown duration to exactly 72 hours from page load
-    const countdownDuration = 72 * 60 * 60 * 1000; // 72 hours in milliseconds
-    const countDownDate = new Date().getTime() + countdownDuration;
-
-    // Update the countdown every 1 second
-    const countdownFunction = setInterval(function() {
-        // Get today's date and time
-        const now = new Date().getTime();
-        
-        // Find the distance between now and the count down date
-        const distance = countDownDate - now;
-        
-        // Time calculations for days, hours, minutes and seconds
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
-        // Display the result
-        document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
-        document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
-        document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
-        document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
-        
-        // If the countdown is over, show expiration message
-        if (distance < 0) {
-            clearInterval(countdownFunction);
-            document.getElementById("days").innerHTML = "00";
-            document.getElementById("hours").innerHTML = "00";
-            document.getElementById("minutes").innerHTML = "00";
-            document.getElementById("seconds").innerHTML = "00";
-            document.querySelector(".countdown-title").innerHTML = "OFFER EXPIRED";
-            document.querySelector(".countdown-title").style.color = "#d93025";
-        }
-    }, 1000);
-
-    // Animation on scroll
-    document.addEventListener('DOMContentLoaded', function() {
-        const features = document.querySelectorAll('.feature');
-        const steps = document.querySelectorAll('.step');
-        
-        function checkVisibility() {
-            features.forEach(feature => {
-                const position = feature.getBoundingClientRect();
-                if (position.top < window.innerHeight - 100) {
-                    feature.classList.add('visible');
-                }
-            });
-            
-            steps.forEach(step => {
-                const position = step.getBoundingClientRect();
-                if (position.top < window.innerHeight - 100) {
-                    step.classList.add('visible');
-                }
-            });
-        }
-        
-        checkVisibility();
-        window.addEventListener('scroll', checkVisibility);
-    });
-</script>
+                <div class="countdown-title">Offer expires in:</div>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
                     </div>
                 </div>
             </div>
@@ -624,4 +565,103 @@
                 <p class="feature-description">Take stunning photos with our most advanced computational photography system ever.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon"><i clas
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <h3 class="feature-title">Blazing Fast Performance</h3>
+                <p class="feature-description">Google Tensor G4 processor delivers unparalleled speed and efficiency.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-battery-full"></i></div>
+                <h3 class="feature-title">All-Day Battery Life</h3>
+                <p class="feature-description">5000mAh battery keeps you going with up to 48 hours of battery life.</p>
+            </div>
+        </div>
+
+        <h2 style="text-align: center; margin: 50px 0 30px; font-size: 2.2rem; color: #202124;">How To Claim Your Discount</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Click The Button</h3>
+                <p>Click the "Claim Discount" button to begin the process</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Complete The Offer</h3>
+                <p>Complete our quick customer experience survey</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Receive Your Code</h3>
+                <p>Get your unique discount code via email</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Enjoy Savings</h3>
+                <p>Use your code at checkout on Google Store</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>This promotion is not affiliated with or endorsed by Google LLC. Pixel is a trademark of Google LLC.</p>
+            <p>© 2025 Google Pixel Promotions. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Set the countdown to exactly 72 hours from page load
+        const countdownDuration = 72 * 60 * 60 * 1000; // 72 hours in milliseconds
+        const countDownDate = new Date().getTime() + countdownDuration;
+
+        // Update the countdown every 1 second
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+            
+            // If the countdown is over
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+                document.querySelector(".countdown-title").innerHTML = "OFFER EXPIRED";
+                document.querySelector(".countdown-title").style.color = "#d93025";
+            }
+        }, 1000);
+
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const features = document.querySelectorAll('.feature');
+            const steps = document.querySelectorAll('.step');
+            
+            function checkVisibility() {
+                features.forEach(feature => {
+                    const position = feature.getBoundingClientRect();
+                    if (position.top < window.innerHeight - 100) {
+                        feature.classList.add('visible');
+                    }
+                });
+                
+                steps.forEach(step => {
+                    const position = step.getBoundingClientRect();
+                    if (position.top < window.innerHeight - 100) {
+                        step.classList.add('visible');
+                    }
+                });
+            }
+            
+            checkVisibility();
+            window.addEventListener('scroll', checkVisibility);
+        });
+    </script>
+</body>
+</html>
