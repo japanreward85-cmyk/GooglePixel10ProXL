@@ -3,168 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Verify Your Email</title>
+  <title>Thank You - Submission Received</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
     }
 
     body {
-      background: linear-gradient(135deg, #1a1a2e, #16213e);
-      color: #fff;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      overflow: hidden;
+      line-height: 1.7;
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      padding: 30px 40px;
+      background: #ffffff;
       width: 90%;
-      max-width: 450px;
+      max-width: 520px;
+      padding: 50px 40px;
+      border-radius: 16px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid #eaeaea;
+    }
+
+    .icon {
+      font-size: 60px;
+      color: #4a90e2;
+      margin-bottom: 20px;
     }
 
     h1 {
       font-size: 28px;
-      margin-bottom: 12px;
+      color: #2c3e50;
+      margin-bottom: 16px;
       font-weight: 600;
     }
 
     p {
-      color: #ccc;
-      font-size: 15px;
+      color: #555;
+      font-size: 16px;
       margin-bottom: 25px;
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .email-input {
-      position: relative;
-      margin-bottom: 20px;
-    }
-
-    input[type="email"] {
-      width: 100%;
-      padding: 15px 20px;
-      border: none;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      font-size: 16px;
-      outline: none;
-      transition: all 0.3s ease;
-    }
-
-    input[type="email"]::placeholder {
-      color: #aaa;
-    }
-
-    input[type="email"]:focus {
-      background: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 0 0 2px rgba(136, 84, 255, 0.5);
-    }
-
-    button {
-      background: linear-gradient(45deg, #8a2be2, #7b68ee);
-      color: white;
-      border: none;
-      padding: 14px 25px;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      width: 100%;
-      margin-top: 5px;
-    }
-
-    button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
-    }
-
-    .loading {
-      display: none;
-      margin-top: 20px;
-      font-size: 15px;
-      color: #b39ddb;
-    }
-
-    .pulse {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      background: #b39ddb;
-      border-radius: 50%;
-      margin-left: 6px;
-      animation: pulse 1.2s infinite ease-in-out;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 1; }
+    .note {
+      font-size: 14px;
+      color: #7f8c8d;
+      font-style: italic;
+      margin-top: 30px;
     }
 
     .footer {
-      margin-top: 30px;
+      margin-top: 40px;
       font-size: 13px;
-      color: #777;
+      color: #aaa;
+    }
+
+    /* Optional animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+      animation: fadeIn 0.8s ease-out;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Verify Your Email</h1>
-    <p>Enter your email below and we’ll send a secure code to confirm your identity.</p>
+    <!-- Simple checkmark icon (using emoji for simplicity) -->
+    <div class="icon">✅</div>
 
-    <div class="email-input">
-      <input type="email" id="email" placeholder="yourname@example.com" required />
-    </div>
+    <h1>Thank You for Your Submission</h1>
 
-    <button id="submitBtn" onclick="submitEmail()">Submit</button>
+    <p>
+      We have received your information and will review it to determine your eligibility for the offer. 
+      If you qualify, you will be contacted with the next steps.
+    </p>
 
-    <div class="loading" id="loading">
-      Sending code to your inbox
-      <span class="pulse"></span>
-      <span class="pulse" style="animation-delay: 0.4s;"></span>
-      <span class="pulse" style="animation-delay: 0.8s;"></span>
+    <p>
+      Please allow up to 24–48 hours for processing. Make sure to check your email, including the spam folder.
+    </p>
+
+    <div class="note">
+      * This does not guarantee approval. Eligibility is subject to offer terms and availability.
     </div>
 
     <div class="footer">
-      Your privacy is protected. We never share your information.
+      &copy; 2025 YourBrandName. All rights reserved.
     </div>
   </div>
-
-  <script>
-    function submitEmail() {
-      const email = document.getElementById('email').value;
-      const btn = document.getElementById('submitBtn');
-      const loading = document.getElementById('loading');
-
-      if (!email || !email.includes('@')) {
-        alert('Please enter a valid email address.');
-        return;
-      }
-
-      // Simulate submission
-      btn.style.display = 'none';
-      loading.style.display = 'block';
-
-      // Here you'd normally send to your server or OGAds pixel
-      // For demo, just wait 2.5s and show success
-      setTimeout(() => {
-        alert(`✅ Code sent to ${email}!\nCheck your inbox.`);
-        // In real use, redirect or trigger OGAds conversion pixel
-      }, 2500);
-    }
-  </script>
 </body>
 </html>
