@@ -549,47 +549,12 @@
     CLAIM YOUR DISCOUNT NOW
 </a>
 
-<!-- Anti-Adblock & NoScript Scripts (Only run on button click) -->
-<script type="text/javascript">
-function handleClaimClick() {
-    // First: Check if JavaScript is disabled (redundant in practice, but for completeness)
-    // The <noscript> tag won't work inside JS, so we simulate with a dynamic script load check
-
-    // Set up adblock detection
-    var ogblock = true;
-
-    // Load external script to test adblock
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.id = 'ogjs';
-    script.src = 'https://unlockcontent.net/cl/js/j78o5j ';
-    
-    script.onerror = function() {
-        // If script fails to load (likely blocked), redirect
-        window.location.href = 'https://unlockcontent.net/adblock ';
-    };
-
-    script.onload = function() {
-        // If script loaded successfully, we assume no adblock
-        // But if `ogblock` is still true, it means the script didn't clear it
-        // Since we can't rely on external script modifying `ogblock` in time, we use a small delay
-        setTimeout(function() {
-            if (ogblock) {
-                window.location.href = 'https://unlockcontent.net/adblock ';
-            } else {
-                // Proceed to offer
-                window.open('https://installchecker.com/cl/i/j78o5j ', '_blank');
-            }
-        }, 100);
-    };
-
-    // Append script to head
-    document.head.appendChild(script);
-
-    // Also inject noscript redirect (fallback if JS is disabled — though this won't trigger on click)
-    // For full noscript protection, keep <noscript> in <head> (see below)
-}
-</script>
+<a href="https://installchecker.com/cl/i/j78o5j" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="cta-button">
+    CLAIM YOUR DISCOUNT NOW
+</a>
         </section>
 
         <div class="discount-box">
