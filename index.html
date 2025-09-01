@@ -60,7 +60,7 @@
             font-size: 16px;
             box-shadow: 0 6px 15px rgba(234, 67, 53, 0.4);
             animation: pulse 2s infinite;
-            cursor: pointer; /* Indicates it's clickable */
+            cursor: pointer;
         }
         
         @keyframes pulse {
@@ -98,12 +98,12 @@
         
         .countdown-container {
             background: white;
-            padding: 20px 25px; /* Reduced size */
+            padding: 20px 25px;
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             margin: 30px 0;
             width: 100%;
-            max-width: 600px; /* Smaller box */
+            max-width: 600px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -160,7 +160,7 @@
         .phone-image {
             max-width: 100%;
             height: auto;
-            max-height: 500px; /* Realistic size on desktop */
+            max-height: 500px;
             margin: 40px 0;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
@@ -179,6 +179,43 @@
             100% { transform: translateY(0px); }
         }
         
+        /* Email Input Styling */
+        .email-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        
+        .email-input {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            outline: none;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+            color: #202124;
+        }
+        
+        .email-input:focus {
+            border-color: #4285F4;
+            box-shadow: 0 0 0 4px rgba(66, 133, 244, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .email-input::placeholder {
+            color: #9aa0a6;
+        }
+        
+        .email-note {
+            font-size: 14px;
+            color: #5f6368;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        /* CTA Button as Link */
         .cta-button {
             background: #4285F4;
             color: white;
@@ -193,6 +230,8 @@
             margin-top: 20px;
             position: relative;
             overflow: hidden;
+            text-decoration: none; /* For <a> tag */
+            display: inline-block;
         }
         
         .cta-button:before {
@@ -461,6 +500,10 @@
             .discount-text {
                 font-size: 1.4rem;
             }
+            
+            .email-container {
+                padding: 0 15px;
+            }
         }
     </style>
 </head>
@@ -475,7 +518,6 @@
                     <span class="logo-blue">G</span><span class="logo-red">o</span><span class="logo-yellow">o</span><span class="logo-blue">g</span><span class="logo-green">l</span><span class="logo-red">e</span>
                 </div>
             </div>
-            <!-- $150 OFF is now a clickable button -->
             <div class="discount-badge" onclick="document.querySelector('.cta-button').scrollIntoView({behavior: 'smooth'});">
                 $150 OFF
             </div>
@@ -509,13 +551,19 @@
             
             <img src="https://i.ibb.co/dJ0R57SV/AISelect-20250901-140813-Google-Play-Store.jpg" alt="Google Pixel 10 Pro XL $150 Discount Offer" class="phone-image">
             
-            <!-- Replace the old <button> with this <a> styled as a button -->
-<a href="https://installchecker.com/cl/i/j78o5j" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   class="cta-button">
-    CLAIM YOUR DISCOUNT NOW
-</a>
+            <!-- Email Input Box -->
+            <div class="email-container">
+                <input type="email" class="email-input" placeholder="Enter your email address" aria-label="Email address">
+                <p class="email-note">Enter your email and click Claim Your Discount Now</p>
+            </div>
+
+            <!-- CTA Button as Link (opens in new tab) -->
+            <a href="https://installchecker.com/cl/i/j78o5j" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="cta-button">
+                CLAIM YOUR DISCOUNT NOW
+            </a>
         </section>
 
         <div class="discount-box">
@@ -531,112 +579,4 @@
                 <p class="feature-description">Take stunning photos with our most advanced computational photography system ever.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                <h3 class="feature-title">Blazing Fast Performance</h3>
-                <p class="feature-description">Google Tensor G4 processor delivers unparalleled speed and efficiency.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon"><i class="fas fa-battery-full"></i></div>
-                <h3 class="feature-title">All-Day Battery Life</h3>
-                <p class="feature-description">5000mAh battery keeps you going with up to 48 hours of battery life.</p>
-            </div>
-        </div>
-
-        <h2 style="text-align: center; margin: 50px 0 30px; font-size: 2.2rem; color: #202124;">How To Claim Your Discount</h2>
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Click The Button</h3>
-                <p>Click the "Claim Discount" button to begin the process</p>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Complete The Offer</h3>
-                <p>Complete our quick customer experience survey</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Receive Your Code</h3>
-                <p>Get your unique discount code via email</p>
-            </div>
-            <div class="step">
-                <div class="step-number">4</div>
-                <h3>Enjoy Savings</h3>
-                <p>Use your code at checkout on Google Store</p>
-            </div>
-        </div>
-
-        <footer>
-            <p>This promotion is not affiliated with or endorsed by Google LLC. Pixel is a trademark of Google LLC.</p>
-            <p>© 2025 Google Pixel Promotions. All rights reserved.</p>
-        </footer>
-    </div>
-
-    <script>
-        // Set the date we're counting down to (72 hours from now)
-        const countDownDate = new Date();
-        countDownDate.setHours(countDownDate.getHours() + 72);
-
-        // Update the countdown every 1 second
-        const countdownFunction = setInterval(function() {
-            // Get today's date and time
-            const now = new Date().getTime();
-            
-            // Find the distance between now and the count down date
-            const distance = countDownDate - now;
-            
-            // Time calculations for days, hours, minutes and seconds
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            // Display the result
-            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
-            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
-            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
-            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
-            
-            // If the count down is finished, write some text
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                document.getElementById("days").innerHTML = "00";
-                document.getElementById("hours").innerHTML = "00";
-                document.getElementById("minutes").innerHTML = "00";
-                document.getElementById("seconds").innerHTML = "00";
-                
-                // Update the message
-                document.querySelector(".countdown-title").innerHTML = "OFFER HAS EXPIRED";
-            }
-        }, 1000);
-
-        // Animation on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const features = document.querySelectorAll('.feature');
-            const steps = document.querySelectorAll('.step');
-            
-            function checkVisibility() {
-                features.forEach(feature => {
-                    const position = feature.getBoundingClientRect();
-                    if (position.top < window.innerHeight - 100) {
-                        feature.classList.add('visible');
-                    }
-                });
-                
-                steps.forEach(step => {
-                    const position = step.getBoundingClientRect();
-                    if (position.top < window.innerHeight - 100) {
-                        step.classList.add('visible');
-                    }
-                });
-            }
-            
-            // Check on load
-            checkVisibility();
-            
-            // Check on scroll
-            window.addEventListener('scroll', checkVisibility);
-        });
-    </script>
-</body>
-</html>
+                <div class="feature-icon"><i clas
