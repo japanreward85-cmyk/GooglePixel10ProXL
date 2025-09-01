@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get $150 Off Google Pixel 10 Pro or Pixel 10 Pro XL | Limited Time Offer</title>
+    <link rel="icon" href="https://www.google.com/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -59,6 +60,7 @@
             font-size: 16px;
             box-shadow: 0 6px 15px rgba(234, 67, 53, 0.4);
             animation: pulse 2s infinite;
+            cursor: pointer; /* Indicates it's clickable */
         }
         
         @keyframes pulse {
@@ -96,19 +98,21 @@
         
         .countdown-container {
             background: white;
-            padding: 30px 40px;
+            padding: 20px 25px; /* Reduced size */
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             margin: 30px 0;
             width: 100%;
-            max-width: 700px;
-            animation: bounceIn 1s ease;
+            max-width: 600px; /* Smaller box */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         .countdown-title {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             color: #202124;
             text-align: center;
         }
@@ -116,7 +120,9 @@
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 12px;
+            width: 100%;
+            flex-wrap: nowrap;
         }
         
         .countdown-item {
@@ -124,10 +130,10 @@
             flex-direction: column;
             align-items: center;
             background: #f8f9fa;
-            padding: 25px 20px;
-            border-radius: 15px;
-            min-width: 100px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+            padding: 15px 10px;
+            border-radius: 12px;
+            min-width: 75px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease;
         }
         
@@ -137,22 +143,24 @@
         }
         
         .countdown-number {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: #4285F4;
-            margin-bottom: 5px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 4px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
         
         .countdown-label {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #5f6368;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
         
         .phone-image {
             max-width: 100%;
+            height: auto;
+            max-height: 500px; /* Realistic size on desktop */
             margin: 40px 0;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
@@ -413,32 +421,45 @@
         
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.3rem;
             }
             
             .subheading {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             
             .countdown {
-                flex-wrap: wrap;
+                gap: 8px;
+                flex-wrap: nowrap;
             }
             
             .countdown-item {
-                min-width: 80px;
-                padding: 20px 15px;
+                min-width: 65px;
+                padding: 12px 8px;
             }
             
             .countdown-number {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.8rem;
+            }
+            
+            .countdown-title {
+                font-size: 1.2rem;
+            }
+            
+            .phone-image {
+                max-height: 400px;
             }
             
             .discount-amount {
-                font-size: 3.5rem;
+                font-size: 3.2rem;
             }
             
             .discount-text {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -454,7 +475,10 @@
                     <span class="logo-blue">G</span><span class="logo-red">o</span><span class="logo-yellow">o</span><span class="logo-blue">g</span><span class="logo-green">l</span><span class="logo-red">e</span>
                 </div>
             </div>
-            <div class="discount-badge">$150 OFF</div>
+            <!-- $150 OFF is now a clickable button -->
+            <div class="discount-badge" onclick="document.querySelector('.cta-button').scrollIntoView({behavior: 'smooth'});">
+                $150 OFF
+            </div>
         </header>
 
         <section class="hero">
